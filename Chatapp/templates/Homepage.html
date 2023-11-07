@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat app</title>
+</head>
+<body>
+{% load static %}
+<script src="{% static 'js/get_offer.js' %}"></script>
+<script>const homeURL = "{% url 'home' %}";</script>
+<script>
+    window.addEventListener('load', function () {
+        // Call the function from your external JavaScript file
+        getOffer(); // Replace 'yourFunction' with the actual function name
+    });
+</script>
+</body>
+</html>
