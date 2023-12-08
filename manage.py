@@ -4,6 +4,13 @@ import os
 import sys
 
 
+class ApplicationData:
+    data: dict = dict()
+
+
+APP_DATA: ApplicationData = ApplicationData()
+
+
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'VcChat.settings')

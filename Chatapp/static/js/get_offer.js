@@ -13,7 +13,8 @@ function getCookie(name) {
   return cookieValue;
 }
 
-function getOffer() {
+function getOffer(answer) {
+console.log("answer"+"this is "+ answer);
   const lc = new RTCPeerConnection();
 
   // Create a data channel
@@ -45,12 +46,16 @@ function getOffer() {
     })
     .then(response => response.json())
     .then(result => {
-      console.log('Data sent successfully:', result.message);
+      console.log('offer sent successfully:', result.message);
     })
     .catch(error => {
       console.error('Error sending data:', error);
     });
+    var encodedData = encodeURIComponent(newoffer);
+
+   // get answer back and set Remote description
+    lc.setRemoteDescription(answer);
 }
 
 // Call the function to generate the offer
-getOffer();
+

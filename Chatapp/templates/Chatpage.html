@@ -1,0 +1,14 @@
+{% extends 'Homepage.html' %}
+{% load static %}
+{% block contents %}
+<script src="{% static 'js/get_answer.js' %}"></script>
+<script>
+     window.onload = function() {
+ const Offer = {{ offer|safe }};
+ const chatURL = "{% url 'Chat' %}";
+ console.log(chatURL);
+ console.log(Offer);
+getAnswer(Offer, chatURL);
+};
+</script>
+{% endblock contents %}
